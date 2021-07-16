@@ -3,12 +3,21 @@ import { FaBars } from "react-icons/fa"
 
 import { Link } from "gatsby"
 import styled from "styled-components"
+import { MenuData } from "../data/MenuData"
 
 const Header = () => {
   return (
     <Nav>
-      <NavLink to="/">EXPLORIX</NavLink>
       <Bars />
+      <NavLink to="/">EXPLORIX</NavLink>
+      <NavMenu>
+        {MenuData.map((item, idx) => (
+          <NavLink to={item.link} key={idx}>
+            {item.title}
+          </NavLink>
+        ))}
+      </NavMenu>
+      <NavBtn>HI</NavBtn>
     </Nav>
   )
 }
@@ -25,6 +34,15 @@ const Nav = styled.nav`
   position: relative;
 `
 
+const NavMenu = styled.div`
+  display: flex;
+  align-items: center;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`
+
 const NavLink = styled(Link)`
   color: white;
   display: flex;
@@ -33,6 +51,16 @@ const NavLink = styled(Link)`
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
+`
+
+const NavBtn = styled.div`
+  display: flex;
+  align-items: center;
+  margin-right: 24px;
+
+  @media screen and (max-with: 768px) {
+    display: none;
+  }
 `
 
 const Bars = styled(FaBars)`
