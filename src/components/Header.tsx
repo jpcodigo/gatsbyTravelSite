@@ -4,6 +4,7 @@ import { FaBars } from "react-icons/fa"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import { MenuData } from "../data/MenuData"
+import { Btn } from "./Btn"
 
 const Header = () => {
   return (
@@ -17,7 +18,11 @@ const Header = () => {
           </NavLink>
         ))}
       </NavMenu>
-      <NavBtn>HI</NavBtn>
+      <NavBtn>
+        <Btn primary="true" round="true" to="/trips">
+          Book a flight
+        </Btn>
+      </NavBtn>
     </Nav>
   )
 }
@@ -25,7 +30,7 @@ const Header = () => {
 export default Header
 
 const Nav = styled.nav`
-  background: red;
+  background-color: red;
   height: 80px;
   display: flex;
   justify-content: space-between;
