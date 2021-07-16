@@ -1,11 +1,11 @@
 import * as React from "react"
 import Header from "./Header"
-import { GlobalStyle } from "./styles/GlobalStyles"
+import { GlobalStyles } from "./styles/GlobalStyles"
 
 const Layout = ({ children }) => {
   return (
     <>
-      <GlobalStyle />
+      <GlobalStyles />
       <Header />
       <main>{children}</main>
     </>
