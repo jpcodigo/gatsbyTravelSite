@@ -1,7 +1,29 @@
 import React from "react"
+import styled from "styled-components"
 
 const Trips = () => {
-  return <div></div>
+  return (
+    <ProductsContainer>
+      <ProductsHeading>Heading</ProductsHeading>
+      <ProductsWrapper>wrapper</ProductsWrapper>
+    </ProductsContainer>
+  )
 }
 
 export default Trips
+
+const ProductsContainer = styled.div`
+  min-height: 100vh;
+  padding: 5rem calc((100vw - 1300px) / 2);
+  background-color: white;
+  color: white;
+`
+
+const ProductsHeading = styled.div`
+  font-size: clamp(1.2rem, 5vw, 3rem);
+  text-align: center;
+  margin-bottom: 5rem;
+  color: black;
+`
+
+const ProductsWrapper = styled.div``
