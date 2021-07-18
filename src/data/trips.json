@@ -6,21 +6,21 @@
     "button": "View Destination"
   },
   {
-    "img": "../assets/images/travel-1.jpg",
-    "alt": "Tian Tan Buddha",
-    "name": "Tian Tan Buddha",
+    "img": "../assets/images/travel-2.jpg",
+    "alt": "Man in desert",
+    "name": "Man in desert",
     "button": "View Destination"
   },
   {
-    "img": "../assets/images/travel-1.jpg",
-    "alt": "Tian Tan Buddha",
-    "name": "Tian Tan Buddha",
+    "img": "../assets/images/travel-3.jpg",
+    "alt": "Marrakesh, Morocco",
+    "name": "Marrakesh, Morocco",
     "button": "View Destination"
   },
   {
-    "img": "../assets/images/travel-1.jpg",
-    "alt": "Tian Tan Buddha",
-    "name": "Tian Tan Buddha",
+    "img": "../assets/images/travel-4.jpg",
+    "alt": "People by waterfall",
+    "name": "People by waterfall",
     "button": "View Destination"
   }
 ]
