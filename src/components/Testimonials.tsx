@@ -32,7 +32,9 @@ const Testimonials = () => {
             </p>
           </Testimonial>
         </ColumnOne>
-        <ColumnTwo>Image</ColumnTwo>
+        <ColumnTwo>
+          <Images />
+        </ColumnTwo>
       </ContentWrapper>
     </TestimonialsContainer>
   )
@@ -40,10 +42,73 @@ const Testimonials = () => {
 
 export default Testimonials
 
-const TestimonialsContainer = styled.div``
-const TopLine = styled.div``
-const Description = styled.div``
-const ContentWrapper = styled.div``
-const ColumnOne = styled.div``
-const Testimonial = styled.div``
-const ColumnTwo = styled.div``
+const TestimonialsContainer = styled.div`
+  height: 100%;
+  width: 100%;
+  background-color: #fcfcfc;
+  color: black;
+  padding: 5rem calc((100vw - 1300px) / 2);
+`
+
+const TopLine = styled.p`
+  color: #077bf1;
+  font-size: 1rem;
+  padding-left: 2rem;
+  margin-bottom: 0.75rem;
+`
+
+const Description = styled.p`
+  text-align: start;
+  padding-left: 2rem;
+  margin-bottom: 4rem;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-weight: bold;
+`
+
+const ContentWrapper = styled.div`
+  padding: 0 2rem;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+`
+
+const ColumnOne = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+`
+
+const Testimonial = styled.div`
+  padding-top: 1rem;
+  padding-right: 2rem;
+
+  & h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-style: italic;
+  }
+
+  & p {
+    color: #3b3b3b;
+  }
+`
+
+const ColumnTwo = styled.div`
+  margin-top: 2rem;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+
+  @media screen and (max-width: 500px) {
+    grid-template-columns: 1fr;
+  }
+`
+
+const Images = styled(Img)`
+  border-radius: 10px;
+  height: 100%;
+`

@@ -105,7 +105,6 @@ const ProductCard = styled.div`
   width: 100%;
   height: 500px;
   border-radius: 10px;
-  transition: 0.2s ease;
 
   position: relative;
 `
@@ -114,7 +113,7 @@ const ProductImg = styled(Img)`
   height: 100%;
   max-width: 100%;
   border-radius: 10px;
-  filter: brightness(70%);
+  filter: brightness(60%);
   transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
 
   position: relative;
