@@ -3,8 +3,30 @@ import styled from "styled-components"
 import Img from "gatsby-image"
 import { IoMdCheckmarkCircleOutline } from "react-icons/io"
 import { FaRegLightbulb } from "react-icons/fa"
+import { useStaticQuery, graphql } from "gatsby"
 
 const Testimonials = () => {
+  const data = useStaticQuery(graphql`
+    query MyQuery {
+      allFile(
+        filter: {
+          ext: { regex: "/(jpg)|(png)|(jpeg)/" }
+          name: { in: ["testimonial-1", "testimonial-2"] }
+        }
+      ) {
+        edges {
+          node {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
   return (
     <TestimonialsContainer>
       <TopLine>Testimonials</TopLine>
@@ -12,8 +34,14 @@ const Testimonials = () => {
       <ContentWrapper>
         <ColumnOne>
           <Testimonial>
-            <IoMdCheckmarkCircleOutline />
-            <h3>Sean Micheals</h3>
+            <IoMdCheckmarkCircleOutline
+              style={{
+                color: "#3fffa8",
+                fontSize: "2rem",
+                marginBottom: "1rem",
+              }}
+            />
+            <h3>Sara Kin</h3>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Temporibus molestias dicta optio. Rem recusandae nesciunt, debitis
@@ -22,8 +50,14 @@ const Testimonials = () => {
             </p>
           </Testimonial>
           <Testimonial>
-            <FaRegLightbulb />
-            <h3>Sara Kin</h3>
+            <FaRegLightbulb
+              style={{
+                color: "#f9b19b",
+                fontSize: "2rem",
+                marginBottom: "1rem",
+              }}
+            />
+            <h3>Sean Micheals</h3>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Temporibus molestias dicta optio. Rem recusandae nesciunt, debitis
@@ -33,7 +67,9 @@ const Testimonials = () => {
           </Testimonial>
         </ColumnOne>
         <ColumnTwo>
-          <Images />
+          {data.allFile.edges.map((image, key) => (
+            <Image key={key} fluid={image.node.childImageSharp.fluid} />
+          ))}
         </ColumnTwo>
       </ContentWrapper>
     </TestimonialsContainer>
@@ -78,7 +114,7 @@ const ContentWrapper = styled.div`
 
 const ColumnOne = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
 `
 
 const Testimonial = styled.div`
@@ -108,7 +144,7 @@ const ColumnTwo = styled.div`
   }
 `
 
-const Images = styled(Img)`
+const Image = styled(Img)`
   border-radius: 10px;
   height: 100%;
 `
