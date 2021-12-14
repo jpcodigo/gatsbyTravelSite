@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Btn } from "./Btn"
-import travel from "../assets/videos/travel.mp4"
+import travel from "../videos/travel.mp4"
 
 const Hero = () => {
   return (
